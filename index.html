@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>otp</title>
+ 
+<style>
+  *{
+  margin: 0px;
+  padding: 0px;
+ }
+
+ body {
+  background-color: #788775;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ }
+
+ #hero {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ #box {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+ }
+
+ #btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ }
+
+ #btn:hover {
+  background-color:#F33D3D;
+ }
+</style>
+
+</head>
+<body>
+ <div id="hero">
+ <h1>OTP GENERATOR</h1>
+ 
+ <input id="box">
+ 
+ <p id="see"></p>
+ <button type="reset" id="btn">reset🔄</button>
+ </div>
+</body>
+
+<script>
+  // Get references to elements
+  const box = document.getElementById("box");
+  const btn = document.getElementById("btn");
+
+  // Generate OTP on button click
+  btn.addEventListener("click", () => {
+    // Generate a 4-digit random OTP
+    const otp = Math.floor(10000000 + Math.random() * 90000000);
+    // Display the OTP in the input box
+    box.value = otp;
+  });
+</script>
+
+</html>
